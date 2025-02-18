@@ -1,4 +1,3 @@
-const { Sequelize, Model, DataTypes } = require('sequelize');
 const productsController = require("../controllers/productsController.js");
 jest.mock("../config/__mocks__/db.js");
 const app = require("../app");
@@ -30,9 +29,9 @@ describe("productsController", () => {
       price: 14.44,
       description: "Product B is a high-quality item.",
     });
-    await Product.create(products[0]);
+    await Product.define(products[0]);
     products[0].id = 1;
-    await Product.create(products[1]);
+    await Product.define(products[1]);
     products[1].id = 2;
   });
 
