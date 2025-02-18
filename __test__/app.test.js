@@ -4,12 +4,10 @@ jest.mock("../config/__mocks__/db.js");
 const seq = require("../config/__mocks__/db.js");
 const Product = require("../models/productModel");
 
-const baseURL = "/api/v1/products";
-
 describe("Products Router results", () => {
   let products = [];
   beforeEach(async () => {
-    await seq.sync({ force: true });
+    await seq.sync({ force: true }); // This will create the table
     products.length = 0;
     products.push({
       title: "Product A",
@@ -26,7 +24,6 @@ describe("Products Router results", () => {
     await Product.create(products[1]);
     products[1].id = 2;
   });
-
   it("should return all products", async () => {
     const response = await request(app).get(baseURL);
     expect(response.status).toBe(200);
