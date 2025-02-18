@@ -29,9 +29,9 @@ describe("productsController", () => {
       description: "Product B is a high-quality item.",
     });
     await Product.create(products[0]);
-    products[0].id = 1;
+    products[0].id = 0;
     await Product.create(products[1]);
-    products[1].id = 2;
+    products[1].id = 1;
   });
 
   it("checkId works correctly if id is invalid", async () => {
