@@ -3,9 +3,7 @@ const sequelize = require('../config/__mocks__/db.js');
 
 const Product = sequelize.define('Product', {
   id: {
-    type: DataTypes.INTEGER,
-    autoIncrement: true,
-    primaryKey: true
+    type: DataTypes.INTEGER
   },
   title: {
     type: DataTypes.STRING,
