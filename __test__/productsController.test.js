@@ -1,5 +1,6 @@
 const productsController = require("../controllers/productsController.js");
 jest.mock("../config/__mocks__/db.js");
+const app = require("../app");
 const seq = require("../config/__mocks__/db.js");
 const Product = require("../models/productModel");
 
@@ -29,9 +30,9 @@ describe("productsController", () => {
       description: "Product B is a high-quality item.",
     });
     await Product.create(products[0]);
-    products[0].id = 0;
+    products[0].id = 1;
     await Product.create(products[1]);
-    products[1].id = 1;
+    products[1].id = 2;
   });
 
   it("checkId works correctly if id is invalid", async () => {
