@@ -50,6 +50,6 @@ describe("Product", () => {
     }
   });
   it("price property has DECIMAL type", async () => {
-    expect(Product.rawAttributes.price.type.constructor.key).toBe("DECIMAL");
+    expect(Product.tableAttributes.price.type.constructor.key).toBe("DECIMAL");
   });
 });
